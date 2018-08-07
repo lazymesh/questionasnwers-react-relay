@@ -19,3 +19,7 @@ get-graphql-schema http://localhost:8080/graphql > shema.graphql
 ```
 
 My graphql server is running at ``http://localhost:8080/graphql`` and ``schema.graphql`` is the filename for the downloaded schema
+
+The project can be started by using ``yarn start`` but before that make sure you run relay compiler by doing ``yarn relay-compiler --src ./src --schema schema.graphql``
+
+
