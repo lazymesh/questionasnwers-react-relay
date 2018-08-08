@@ -6,19 +6,18 @@ schema {
 scalar DateTime
 
 type mutation {
-  createUser(id: Int!, name: String!): User!
+  createUser(userId: Int!, name: String!): User!
   createQuestion(text: String!, answer: String!, postedBy: Int!): Question!
 }
 
 type Query {
   users: [User!]!
-  user(id: Int!): User
+  user(userId: Int!): User
   questions: [Question!]!
   question(text: String!): Question
 }
 
 type Question {
-  id:ID!
   text: String!
   answer: String!
   postedBy: Int!
@@ -31,4 +30,9 @@ type User {
   questions: [Question!]!
   lastQuestion: Question!
 }
+
+type Test{
+  id: ID
+}
+
 

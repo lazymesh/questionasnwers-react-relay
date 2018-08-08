@@ -12,18 +12,24 @@ class CreateUser extends Component{
         return (
             <div>
                 <div>
+                    <div>
+
                     <input
                         value={this.state.userId}
                         onChange={(e) => this.setState({userId: e.target.value})}
                         type='text'
                         placeholder='userId of the user below'
                     />
+
+                    </div>
+                    <div>
                     <input
                         value={this.state.name}
                         onChange={(e) => this.setState({name: e.target.value})}
                         type='text'
                         placeholder='user name for the id above'
                     />
+                    </div>
                 </div>
                 <div
                     className='button'
@@ -37,7 +43,7 @@ class CreateUser extends Component{
 
     createUser = () => {
         const {userId, name } = this.state
-        CreateUserMutation(userId, name, () => console.log("user creation mutaation completed"))
+        CreateUserMutation(parseInt(userId), name, () => console.log("user creation mutaation completed"))
     }
 }
 
