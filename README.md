@@ -22,4 +22,4 @@ My graphql server is running at ``http://localhost:8080/graphql`` and ``schema.g
 
 The project can be started by using ``yarn start`` but before that make sure you run relay compiler by doing ``yarn relay-compiler --src ./src --schema schema.graphql``
 
-
+Subscription is added which is done on SSE (Server Sent Events) rather than web sockets.
