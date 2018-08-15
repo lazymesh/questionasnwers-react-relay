@@ -43,7 +43,7 @@ class CreateUser extends Component{
 
     createUser = () => {
         const {userId, name } = this.state
-        CreateUserMutation(parseInt(userId), name, () => this.props.history.push('/users'))
+        CreateUserMutation(parseInt(userId, 10), name, () => this.props.history.push('/users'))
     }
 }
 

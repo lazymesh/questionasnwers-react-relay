@@ -1,3 +1,5 @@
+// import { SubscriptionClient } from 'subscriptions-transport-ws'
+
 const {
     Environment,
     Network,
@@ -8,7 +10,6 @@ const {
 const store = new Store(new RecordSource())
 
 const network = Network.create((operation, variables) => {
-    console.log(operation)
     return fetch('http://localhost:8080/graphql', {
         method: 'POST',
         headers: {
@@ -24,7 +25,28 @@ const network = Network.create((operation, variables) => {
     }).then(response => {
         return response.json()
     })
-})
+},
+    (config, variables, cacheConfig, observer) => {
+        return fetch('http://localhost:8080/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: config.text,
+                variables,
+            }),
+        }).then(response => {
+            console.log("subsccccccccccccccccccccsssssssssssssssss")
+            return response.json()
+            // observer.onNext({data: response.json()})
+        })
+    // const subscriptionClient = new SubscriptionClient('http://localhost:8080/graphql', {reconnect: true});
+    // subscriptionClient.subscribe({query, variables}, (error, result) => {
+    // observer.onNext({data: result})
+    // })
+}
+)
 
 const environment = new Environment({
     network,

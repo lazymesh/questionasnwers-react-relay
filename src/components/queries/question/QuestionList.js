@@ -9,8 +9,8 @@ class QuestionList extends Component {
     render(){
         return(
             <div>
-                {this.props.viewer.questions.map( question =>(
-                    <Question question={question}/>
+                {this.props.viewer.questions.map( (question) =>(
+                    <Question key={question.__id} index={0} question={question}/>
                 ))
                 }
             </div>

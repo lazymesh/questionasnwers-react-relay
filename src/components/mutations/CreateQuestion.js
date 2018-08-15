@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import CreateQuestionMutation from './CreateQuestionMutation'
+import questionSubscription from "../subscription/QuestionSubscription";
 
 class CreateQuestion extends Component{
+
+    componentDidMount() {
+        questionSubscription()
+    }
 
     state = {
         text: '',

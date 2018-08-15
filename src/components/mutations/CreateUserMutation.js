@@ -2,7 +2,7 @@ import {
     commitMutation,
     graphql,
 } from 'react-relay'
-import { ConnectionHandler } from 'relay-runtime'
+// import { ConnectionHandler } from 'relay-runtime'
 import environment from "../../Environment"
 
 const mutation = graphql`
