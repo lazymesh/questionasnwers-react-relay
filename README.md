@@ -1,5 +1,5 @@
 # questionasnwers-react-relay
-front end project of graphql project to aid the QuestionAnswers backend graphql project
+Front end project of graphql project (haven't worked on CSS part yet) to aid the [QuestionAnswers](https://github.com/lazymesh/QuestionAnswers) backend graphql project
 
 This project is created by using ``create-react-app`` command
 
@@ -12,7 +12,7 @@ yarn add relay-compiler --dev
 yarn add babel-plugin-relay --dev
 ```
 
-schema is downloaded from the Graphql server by doing 
+Schema is downloaded from the Graphql server by doing 
 
 ```
 get-graphql-schema http://localhost:8080/graphql > shema.graphql
