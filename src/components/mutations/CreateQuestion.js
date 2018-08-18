@@ -55,7 +55,7 @@ class CreateQuestion extends Component{
 
     createQuestion = () => {
         const {text, answer, postedBy } = this.state
-        CreateQuestionMutation(text, answer, parseInt(postedBy), () => this.props.history.push('/'))
+        CreateQuestionMutation(text, answer, parseInt(postedBy, 10), () => this.props.history.push('/'))
     }
 }
 

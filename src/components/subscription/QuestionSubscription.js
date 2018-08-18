@@ -9,6 +9,8 @@ const questionSubscr = graphql`
         questionCreated {
             text
             answer
+            postedBy
+            createdAt
         }
     }
 `
@@ -19,12 +21,14 @@ export default () => {
         variables: {},
 
         updater:(store) => {
-            console.log("in subscription question updater")
-            const q = store.getRootField("questionCreated")
-            const tt = q.getValue("text")
-            console.log(tt)
+            // console.log("in subscription question updater")
+            // const subscriptionRoot = store.getRootField('questionCreated')
+            // const text = subscriptionRoot.getValue("text")
+            // const answer = subscriptionRoot.getValue("answer")
+            // const postedBy= subscriptionRoot.getValue("postedBy")
+            // const createdAt= subscriptionRoot.getValue("createdAt")
+            // console.log("text "+text+ " answer "+answer+ " postedBy "+postedBy+ " createdAt "+createdAt)
         },
-        onCompleted: () => console.log("completed subscription"),
         onError: error => console.log('An error occured during subscription question  '+error)
     }
     requestSubscription(

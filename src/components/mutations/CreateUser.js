@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import CreateUserMutation from './CreateUserMutation'
+import UserSubscription from '../subscription/UserSubscription'
 
 class CreateUser extends Component{
+
+    componentDidMount() {
+        UserSubscription()
+    }
 
     state = {
         userId: '',

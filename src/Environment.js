@@ -1,4 +1,4 @@
-// import { SubscriptionClient } from 'subscriptions-transport-ws'
+import fetchS from 'fetch-streaming'
 
 const {
     Environment,
@@ -27,25 +27,22 @@ const network = Network.create((operation, variables) => {
     })
 },
     (config, variables, cacheConfig, observer) => {
-        return fetch('http://localhost:8080/graphql', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                query: config.text,
-                variables,
-            }),
-        }).then(response => {
-            console.log("subsccccccccccccccccccccsssssssssssssssss")
-            return response.json()
-            // observer.onNext({data: response.json()})
-        })
-    // const subscriptionClient = new SubscriptionClient('http://localhost:8080/graphql', {reconnect: true});
-    // subscriptionClient.subscribe({query, variables}, (error, result) => {
-    // observer.onNext({data: result})
-    // })
-}
+        fetchS('http://localhost:8080/graphql',
+            {method: 'POST',
+                    headers: {
+                        'Accept': 'text/event-stream',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query: config.text,
+                        variables,
+                    }),
+                 },
+                stream => {
+                    observer.onNext({data: JSON.parse(stream.substring(5))})
+                }
+        )
+    }
 )
 
 const environment = new Environment({

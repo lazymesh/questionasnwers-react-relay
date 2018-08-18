@@ -25,10 +25,17 @@ export default (userId, name, callback) => {
         {
             mutation,
             variables,
+            updater: (store) => {
+                // console.log("in updater of user mutation")
+                // const mutatedRoot = store.getRootField('createUser')
+                // const userId = mutatedRoot.getValue("userId")
+                // const name = mutatedRoot.getValue("name")
+                // console.log("id "+userId+ " name "+name)
+            },
             onCompleted: () => {
                 callback()
             },
-            onError: err => console.log(err)
+            onError: err => console.log("error in user mutation "+err)
         }
     )
 }

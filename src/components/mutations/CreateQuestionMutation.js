@@ -11,6 +11,7 @@ const mutation = graphql`
         text
         answer
         postedBy
+        createdAt
     }
   }
 `
@@ -31,16 +32,17 @@ export default (question, answerInput, postBy, callback) => {
             },
             updater: (store) => {
               // console.log("updater of create question mutation")
-              //   const ud = store.getRootField("createQuestion")
-              //   const udd= ud.getValue("text")
-              //   console.log(udd)
-                // const q = store.get(this.props.test.test)
-                // console.log(q)
+                // const mutatedData = store.getRootField("createQuestion")
+                // const text = mutatedData.getValue("text")
+                // const answer = mutatedData.getValue("answer")
+                // const postedBy= mutatedData.getValue("postedBy")
+                // const createdAt= mutatedData.getValue("createdAt")
+                // console.log("text "+text+ " answer "+answer+ " postedBy "+postedBy+ " createdAt "+createdAt)
             },
             onCompleted: () => {
                 callback()
             },
-            onError: err => console.log(err)
+            onError: err => console.log("error in question mutation "+err)
         }
     )
 }

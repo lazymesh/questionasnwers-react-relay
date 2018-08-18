@@ -10,7 +10,7 @@ class UserList extends Component {
         return(
             <div>
                 {this.props.viewer.users.map( user =>(
-                        <User user={user}/>
+                        <User key={user.__id} user={user}/>
                     ))
                 }
             </div>
