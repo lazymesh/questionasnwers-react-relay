@@ -23,6 +23,7 @@ type Question {
   answer: String!
   postedBy: Int!
   createdAt: DateTime!
+  user: User
 }
 
 type subscription {
@@ -37,7 +38,6 @@ type User {
   lastQuestion: Question!
 }
 
-type Test{
-  id: ID!
+type test {
+ id: ID!
 }
-

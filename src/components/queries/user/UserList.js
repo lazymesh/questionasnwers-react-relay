@@ -8,12 +8,14 @@ import {
 class UserList extends Component {
     render(){
         return(
-            <div>
+            <ol>
                 {this.props.viewer.users.map( user =>(
+                    <li>
                         <User key={user.__id} user={user}/>
+                    </li>
                     ))
                 }
-            </div>
+            </ol>
         )
     }
 }

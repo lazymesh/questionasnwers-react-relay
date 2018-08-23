@@ -8,12 +8,14 @@ import {
 class QuestionList extends Component {
     render(){
         return(
-            <div>
+            <ol>
                 {this.props.viewer.questions.map( (question) =>(
-                    <Question key={question.__id} index={0} question={question}/>
+                    <li>
+                        <Question key={question.__id} question={question}/>
+                    </li>
                 ))
                 }
-            </div>
+            </ol>
         )
     }
 }

@@ -7,14 +7,11 @@ import {
 class Question extends Component {
     render() {
         return (
-            <div>
                 <div>
-                    {this.props.question.text}
-                       {this.props.question.answer}
-                       {this.props.question.postedBy}
-                       {this.props.question.createdAt}
+                    <p><b>{this.props.question.text}</b></p>
+                    <p>{this.props.question.answer}</p>
+                    <p>Posted by : {this.props.question.user.name} on {this.props.question.createdAt}</p>
                 </div>
-            </div>
         )
     }
 
@@ -26,5 +23,8 @@ export default createFragmentContainer(Question, graphql`
         answer
         postedBy
         createdAt
+        user{
+            name
+        }
     }
 `)

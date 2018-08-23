@@ -7,12 +7,7 @@ import {
 class User extends Component {
     render() {
         return (
-            <div>
-                <div>
-                    {this.props.user.userId}
-                    ({this.props.user.name})
-                </div>
-            </div>
+            <p>{this.props.user.name}</p>
         )
     }
 
