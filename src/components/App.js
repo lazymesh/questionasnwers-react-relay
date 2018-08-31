@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
         <div>
+            <h4>Question Answer react-relay app with graphql(sangria) and neo4j at backend</h4>
             <Header />
             <Switch>
                 <Route exact path='/' component={QuestionListPage}/>
