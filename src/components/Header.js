@@ -10,11 +10,10 @@ class Header extends Component {
         }
         return (
             <div>
-                <Link to='/' class='button' style={marginLeftStyle}>questions</Link>
-                <Link to='/users' class='button' style={marginLeftStyle}>users</Link>
-                <Link to='/create_user' class='button' style={marginLeftStyle}>createUser</Link>
-                <Link to='/create_question' class='button' style={marginLeftStyle}>createQuestion</Link>
-                <div>-</div>
+                <Link to='/' className='button' style={marginLeftStyle}>questions</Link>
+                <Link to='/users' className='button' style={marginLeftStyle}>users</Link>
+                <Link to='/create_user' className='button' style={marginLeftStyle}>createUser</Link>
+                <Link to='/create_question' className='button' style={marginLeftStyle}>createQuestion</Link>
             </div>
 
         );

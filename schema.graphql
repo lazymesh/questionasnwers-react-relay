@@ -11,10 +11,18 @@ type mutation {
   createQuestion(text: String!, answer: String!, postedBy: Int!): Question!
 }
 
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String!
+  endCursor: String!
+}
+
 type Query {
   users: [User!]!
   user(userId: Int!): User
   questions: [Question!]!
+  pagedquestions(first: Int!, after: String): QuestionConnection
   question(text: String!): Question
 }
 
@@ -24,6 +32,17 @@ type Question {
   postedBy: Int!
   createdAt: DateTime!
   user: User
+}
+
+type QuestionConnection {
+  pageInfo: PageInfo!
+  edges: [QuestionEdge!]!
+  count: Int!
+}
+
+type QuestionEdge {
+  node: Question!
+  cursor: String!
 }
 
 type subscription {
