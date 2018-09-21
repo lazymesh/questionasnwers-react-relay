@@ -29,4 +29,4 @@ yarn add fetch-streaming
 ```
 More info on how subscription should work is on [Subscription-relay](https://facebook.github.io/relay/docs/en/subscriptions.html)
 
-Pagination is added which can be viewed at ``http://localhost:3000/pagedQuestions``. I have hardcoded the pagination to be 1 record for each page load.
+Pagination is added which can be viewed at ``http://localhost:3000/paginatedQuestions``. I have hardcoded the pagination to be 1 record for each page load.
